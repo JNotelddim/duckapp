@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from duckapp.duckapi.serializers import UserSerializer, GroupSerializer
+from duckapp.duckapi.models import FeedingSession
+from duckapp.duckapi.serializers \
+    import UserSerializer, GroupSerializer, FeedingSessionSerializer
 
 
 # Create your views here.
@@ -19,3 +21,10 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class FeedingSessionViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows feeding sessions to be viewed or edited
+    """
+    queryset = FeedingSession.objects.all()
+    serializer_class = FeedingSessionSerializer
