@@ -1,0 +1,5 @@
+2:20
+
+after some debating and back-and-forth I think I've decided to go with a django rest api and a react front-end.
+
+I haven't used django in a fair bit of time, so this may be a little clunky.. I'll do my best though.
