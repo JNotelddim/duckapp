@@ -11,3 +11,13 @@ I should note that I've note been purely focused on this in the past 50 mins or 
 but anyways, I've now technically got an app using just the django and django-rest fws which can handle the basics of what's asked.. It's hardly very pretty though - hence the preference for using a react front-end instead. 
 
 I'll just work on deploying this django app first, and then from there I'll try building up a react app which uses this django api.
+
+4:10
+finally got the app deploying properly, but now am getting an application error when I try and hit the endpoint through the browser -- am trying to see the heroku log to see where the app error is coming from
+
+4:30
+so I figured out that the app was 503'ing because I had no dynos allocated.
+
+I tried to allocate dynos, but it couldn't without a Procfile,
+
+so i'm just creating the procfile atm
