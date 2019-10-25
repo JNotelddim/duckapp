@@ -17,7 +17,13 @@ finally got the app deploying properly, but now am getting an application error 
 
 4:30
 so I figured out that the app was 503'ing because I had no dynos allocated.
-
 I tried to allocate dynos, but it couldn't without a Procfile,
-
 so i'm just creating the procfile atm
+
+4:33
+finally got it to scale up to 1 dyno and successfully deploy (and not 503 when I hit the endpoint).
+
+HOWEVER -- when I authentice and try to get in through the /admin page, or the /feedingSessions endpoint, I get a 500 "programming error" which gives "duckapi_feedingsession" does not exist.
+I believe this is because the migrations haven't applied?
+
+going to try adding "release: python manage.py migrate" to the Procfile 
